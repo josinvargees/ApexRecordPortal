@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexRecordPortal</title>
+    <link rel="stylesheet" href="../Employeecss/employee.css">
+    <link rel="icon" type="image/svg+xml" href="../logo/icon.svg" >
+</head>
+    <div class="const">
+        <h1>Apex Employees</h1>
+        <img src="../logo/logo.jpg" alt="Apexlogo" class="logo" width="180">
+        <a href="empdashboard.html" class="emp">← Back</a><br><br>
+        <div class="top">
+            <input type="text" id="sea" placeholder="Employee Search">
+            <button onclick="addEmployee()">Add Employee</button>
+            
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="employeeTable"></tbody>
+        </table>
+    </div>
+    <script src="../Employeejs/employee.js"></script>
+</body>
+</html

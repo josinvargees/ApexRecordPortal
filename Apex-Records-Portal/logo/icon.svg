@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background -->
+  <circle cx="256" cy="256" r="245" fill="#e6e6e6"/>
+
+  <!-- Circle Border -->
+  <circle cx="256" cy="256" r="210"
+          fill="none"
+          stroke="#0d1b3f"
+          stroke-width="14"/>
+
+  <!-- Letter A -->
+  <path d="M256 105
+           L155 370
+           L205 370
+           L230 305
+           L282 305
+           L307 370
+           L357 370
+           L256 105Z"
+        fill="#0d1b3f"/>
+
+  <!-- Inner Triangle -->
+  <polygon points="256,175 220,275 292,275"
+           fill="#e6e6e6"/>
+
+  <!-- Blue Swoosh -->
+  <path d="M180 300
+           C230 255 300 250 345 290
+           C300 280 245 295 200 330Z"
+        fill="#1e88e5"/>
+</svg>

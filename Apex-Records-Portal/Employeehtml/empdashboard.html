@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexRecordPortal</title>
+    <link rel="stylesheet" href="../Employeecss/empdashboard.css">
+    <link rel="icon" type="image/svg+xml" href="../logo/icon.svg" >
+</head>
+<body>
+    <div class="classd">
+        <aside class="side">
+            <img src="../logo/logo.jpg" alt="Apexlogo" class="logo" width="180">
+            <h1>Apex Records Portal</h1>
+            <br>
+            <ul>
+                <a href="empdashboard.html"><li>Dashboard</li></a>
+                <a href="employee.html"><li>Apex Employees</li></a>
+                <a href="empadd.html"><li>Add Employees</li></a>
+                <a href="empdep.html"><li>Apex Departments</li></a>
+                <a href="emplogin.html"><li>Logout</li></a>
+            </ul>
+        </aside>
+    <main class="maintag">
+        <header>
+            <h1 class="hone">Apex Dashboard</h1>
+        </header>
+        <section class="tags">
+            
+            <div class="tag">
+                <h2>Total Employees</h2>
+                <h1 id="temp">0</h1>
+            </div>
+        
+            <div class="tag">
+                <h2>Departments</h2>
+                <h1>3</h1>
+            </div>
+            <div class="tag">
+                <h2>Active Employees</h2>
+                <h1 id="aemp">0</h1>
+            </div>
+        </section>
+        <section class="re">
+            <h2>Recent Employee</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>DEPARTMENT</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody id="emptable"></tbody>
+            </table>
+        </section>
+    </main>
+    </div>
+    <script src="../Employeejs/empdashboard.js"></script>
+</body>
+</html>
