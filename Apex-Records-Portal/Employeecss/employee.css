@@ -1,120 +1,675 @@
-*{
+/* 
+   EMPLOYEE MANAGEMENT
+   LUXURY DARK EMPLOYEE LIST
+ */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+
+    font-weight: 400;
 }
-body{
-    background: #0b2c96;
-    padding: 30px;
+
+
+/* 
+   DESIGN SYSTEM
+ */
+
+:root {
+    --bg: #050505;
+    --surface: #0d0d0d;
+    --surface-light: #151515;
+
+    --text: #ffffff;
+    --text-secondary: #999999;
+
+    --border: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.28);
+
+    --shadow: rgba(0, 0, 0, 0.5);
 }
-.logo{
+
+
+/* 
+   BODY
+ */
+
+body {
+    min-height: 100vh;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    padding: 35px 40px;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* 
+   BACKGROUND CIRCLE
+ */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 255, 255, 0.04);
+
+    border-radius: 50%;
+
+    top: -280px;
+    right: -180px;
+
+    pointer-events: none;
+}
+
+
+/* 
+   LOGO
+ */
+
+.logo {
     position: absolute;
-    width: 100px;
+
+    width: 90px;
+
+    height: auto;
+
     top: 35px;
-    right: 52px;
+    right: 45px;
+
+    object-fit: contain;
+
+    filter: grayscale(100%);
+
+    opacity: 0.9;
 }
-h1{
-    height: 30px;
-    margin-top: 30px;
+
+
+/* 
+   MAIN HEADING
+ */
+
+h1 {
+    margin-top: 20px;
+
+    margin-bottom: 30px;
+
+    color: var(--text);
+
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
 }
-.const{
-    background: rgb(255, 255, 255);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgb(0, 0, 0);
+
+
+/* 
+   MAIN CONTAINER
+ */
+
+.const {
+    width: 100%;
+
+    background: rgba(13, 13, 13, 0.94);
+
+    padding: 30px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 25px 70px var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
 }
-.emp{
+
+
+/* 
+   TOP BORDER
+ */
+
+.const::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+}
+
+
+/* 
+   ADD EMPLOYEE BUTTON
+ */
+
+.emp {
     float: right;
-    padding:  6px 20px;
-    background: #0b2c96;
-    color: #ffffff;
+
+    padding: 9px 18px;
+
+    background: var(--text);
+
+    color: #050505;
+
+    border: 1px solid var(--text);
+
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
     text-align: center;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
-.emp:hover{
-    background:#000a7a;
+
+
+/* 
+   ADD EMPLOYEE HOVER
+ */
+
+.emp:hover {
+    background: transparent;
+
+    color: var(--text);
+
+    border-color: var(--border-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.35);
 }
-h1{
-    margin-bottom: 20px;
-    color: #000000;
-}
-.top{
+
+
+/* 
+   TOP CONTROLS
+ */
+
+.top {
     display: flex;
+
     justify-content: space-between;
-    margin-bottom: 20px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    flex-wrap: wrap;
 }
-.top input{
+
+
+/* 
+   SEARCH INPUT
+ */
+
+.top input {
     width: 300px;
-    padding: 10px;
-    border: 2px solid black;
+
+    max-width: 100%;
+
+    padding: 12px 14px;
+
+    background: var(--surface-light);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
     border-radius: 8px;
-    cursor: pointer;
+
+    outline: none;
+
+    font-size: 14px;
+
+    cursor: text;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
-button{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-     width: 200px;
-    padding: 10px;
-    border: 2px solid black;
+
+
+/* Placeholder */
+
+.top input::placeholder {
+    color: #666666;
+}
+
+
+/* Search focus */
+
+.top input:focus {
+    background: #191919;
+
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+
+/* 
+   FILTER / OTHER BUTTON
+ */
+
+button {
+    width: 180px;
+
+    padding: 11px 15px;
+
+    background: var(--surface-light);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
     border-radius: 8px;
+
     cursor: pointer;
-}
-table{
-    width:100%;
-    border-collapse:collapse;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-th{
-    background:#0b2c96;
-    color:white;
-    padding:12px;
+
+button:hover {
+    background: #1c1c1c;
+
+    border-color: var(--border-hover);
+
+    transform: translateY(-2px);
 }
 
-td{
-    border:1px solid #ddd;
-    padding:12px;
-    text-align:center;
+
+/* 
+   TABLE WRAPPER
+ */
+
+table {
+    width: 100%;
+
+    min-width: 750px;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    overflow: hidden;
 }
 
-tr:nth-child(even){
-    background:#f2f2f2;
+
+/* 
+   TABLE HEADER
+ */
+
+th {
+    background: var(--surface-light);
+
+    color: var(--text);
+
+    padding: 15px 14px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
 }
 
-tr:hover{
-    background:#dbe6ff;
+
+/* 
+   TABLE DATA
+ */
+
+td {
+    padding: 14px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
-.edit{
-    background: #0b2c96;
-    color: rgb(255, 255, 255);
-    border: none;
-    padding: 6px 12px;
-    border-radius: 5px;
+
+
+/* 
+   ALTERNATING ROW
+ */
+
+tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+
+/* 
+   ROW HOVER
+ */
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.045);
+}
+
+
+tr:hover td {
+    color: var(--text);
+}
+
+
+/* 
+   EDIT BUTTON
+ */
+
+.edit {
+    background: transparent;
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    padding: 7px 14px;
+
+    border-radius: 6px;
+
     cursor: pointer;
+
     text-decoration: none;
+
     display: block;
-    margin: 8px auto;
-    
+
+    width: 80px;
+
+    margin: 6px auto;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
-.delete{
-    background: rgb(219, 5, 5);
-    color: rgb(255, 255, 255);
-    padding: 6px 12px;
-    border-radius: 5px;
+
+
+/* 
+   EDIT HOVER
+ */
+
+.edit:hover {
+    background: var(--text);
+
+    color: #050505;
+
+    border-color: var(--text);
+
+    transform: translateY(-2px);
+}
+
+
+/* 
+   DELETE BUTTON
+ */
+
+.delete {
+    background: transparent;
+
+    color: #999999;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding: 7px 14px;
+
+    border-radius: 6px;
+
     cursor: pointer;
+
     text-decoration: none;
+
     display: block;
-    margin: 8px auto;
+
+    width: 80px;
+
+    margin: 6px auto;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
-.edit:hover{
-    color: #ffffff;
-    background: #00084d;
+
+
+/* 
+   DELETE HOVER
+ */
+
+.delete:hover {
+    background: #ffffff;
+
+    color: #050505;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
 }
-.delete:hover{
-    color: #ffffff;
-    background: #ac0101;
+
+
+/* 
+   TABLE SCROLL
+ */
+
+.const {
+    overflow-x: auto;
+}
+
+
+/* 
+   SCROLLBAR
+ */
+
+::-webkit-scrollbar {
+    width: 7px;
+
+    height: 7px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #292929;
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+
+/* 
+   TABLET
+ */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 25px;
+    }
+
+    .logo {
+        right: 30px;
+    }
+
+    .const {
+        padding: 25px;
+    }
+
+    .top {
+        align-items: stretch;
+    }
+
+    .top input {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+/* 
+   MOBILE
+ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .logo {
+        position: relative;
+
+        top: auto;
+        right: auto;
+
+        display: block;
+
+        margin: 0 0 20px auto;
+
+        width: 70px;
+    }
+
+    h1 {
+        margin-top: 10px;
+
+        font-size: 27px;
+    }
+
+    .const {
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+    .emp {
+        float: none;
+
+        display: inline-block;
+
+        margin-bottom: 20px;
+    }
+
+    .top {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+}
+
+
+/* 
+   SMALL MOBILE
+ */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .const {
+        padding: 16px;
+    }
 }

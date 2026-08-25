@@ -1,51 +1,376 @@
-*{
+/* 
+   EDIT / UPDATE EMPLOYEE
+   LUXURY DARK DESIGN
+ */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
 }
-body{
-    background: rgb(16, 0, 160);
+
+
+/* 
+   DESIGN SYSTEM
+ */
+
+:root {
+    --bg: #050505;
+    --surface: #0d0d0d;
+    --surface-light: #151515;
+
+    --text: #ffffff;
+    --text-secondary: #999999;
+
+    --border: rgba(255, 255, 255, 0.12);
+    --border-hover: rgba(255, 255, 255, 0.28);
+
+    --shadow: rgba(0, 0, 0, 0.55);
+}
+
+
+/* 
+   BODY
+ */
+
+body {
+    min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    height: 100vh;
-}
-.const{
-    width: 400px;
-    background: white;
+
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px  rgb(0, 0, 0);
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    overflow-x: hidden;
+
+    position: relative;
 }
-h1{
-    text-align: center;
-    color: rgb(13, 0, 255);
-    margin-bottom: 20px;
+
+
+/* 
+   GEOMETRIC DECORATIONS
+ */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 50%;
+
+    top: -280px;
+    right: -180px;
+
+    pointer-events: none;
 }
-input{
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+    height: 400px;
+
+    border: 1px solid rgba(255, 255, 255, 0.035);
+
+    border-radius: 50%;
+
+    bottom: -230px;
+    left: -170px;
+
+    pointer-events: none;
+}
+
+
+/* 
+   FORM CONTAINER
+ */
+
+.const {
+    width: 400px;
+
+    max-width: 100%;
+
+    background: rgba(13, 13, 13, 0.94);
+
+    color: var(--text);
+
+    padding: 40px;
+
+    border-radius: 16px;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 30px 80px var(--shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    position: relative;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+/* 
+   TOP BORDER
+ */
+
+.const::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid black;
-    border-radius: 10px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
 }
-button{
-    width: 40%;
-    padding: 8px;
-    background: blue;
-    color: white;
-    border-radius:8px;
-    cursor: pointer;
-    font-size: 16px;
-    display:block;
-    margin: 20px auto 0;
-}
-button:hover{
-    background: rgb(0, 0, 129);
-}
-#mes{
-    margin-top: 15px;
+
+
+/* 
+   HEADING
+ */
+
+h1 {
     text-align: center;
-    color: rgb(4, 0, 255);
+
+    color: var(--text);
+
+    margin-bottom: 30px;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+}
+
+
+/*
+   INPUT
+ */
+
+input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin: 9px 0;
+
+    background: var(--surface-light);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/*
+   PLACEHOLDER
+ */
+
+input::placeholder {
+    color: #666666;
+}
+
+
+/*
+   INPUT FOCUS
+*/
+
+input:focus {
+    background: #191919;
+
+    border-color: var(--border-hover);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+
+/* 
+   BUTTON
+*/
+
+button {
+    width: 45%;
+
+    min-width: 150px;
+
+    padding: 12px 20px;
+
+    background: var(--text);
+
+    color: #050505;
+
+    border: 1px solid var(--text);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    display: block;
+
+    margin: 25px auto 0;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* 
+   BUTTON HOVER
+ */
+
+button:hover {
+    background: transparent;
+
+    color: var(--text);
+
+    border-color: var(--border-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* 
+   BUTTON ACTIVE
+*/
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* 
+   MESSAGE
+*/
+
+#mes {
+    margin-top: 15px;
+
+    text-align: center;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    min-height: 18px;
+}
+
+
+/* 
+   RESPONSIVE
+ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .const {
+        width: 100%;
+
+        padding: 30px 24px;
+
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+/* 
+   SMALL MOBILE
+*/
+
+@media (max-width: 380px) {
+
+    .const {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    input {
+        padding: 12px;
+    }
 }
